@@ -7,7 +7,11 @@ export const LeadsApi = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: '' }),
   endpoints: (builder) => ({
     login: builder.query({
-      query: () => `/`,
+      query: (user) => ({
+        url:'/login',
+        method:'POST',
+        body:user,
+      }),
     }),
   }),
 })
