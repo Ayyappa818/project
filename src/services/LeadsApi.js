@@ -4,13 +4,28 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 // Define a service using a base URL and expected endpoints
 export const LeadsApi = createApi({
   reducerPath: 'LeadsApi',
-  baseQuery: fetchBaseQuery({ baseUrl: '' }),
+  baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:7777/' }),
   endpoints: (builder) => ({
-    login: builder.query({
+    login: builder.mutation({
       query: (user) => ({
         url:'/login',
         method:'POST',
         body:user,
+      }),
+    }),
+    signup: builder.mutation({
+      query: (user) => ({
+        url:'/signup',
+        method:'POST',
+        body:user,
+      }),
+    }),
+    getLeads: builder.query({
+      query: () => ({
+        url:'',
+        headers:{
+          "authorization":window.localStorage.getItem("token")
+        },
       }),
     }),
   }),
@@ -18,4 +33,9 @@ export const LeadsApi = createApi({
 
 // Export hooks for usage in functional components, which are
 // auto-generated based on the defined endpoints
-export const {  } = LeadsApi
+export const {
+  useLoginMutation,
+  useSignupMutation,
+  useGetLeadsQuery,
+
+} = LeadsApi

@@ -1,25 +1,33 @@
 import React from 'react'
 import { Formik, Form, Field, ErrorMessage } from 'formik';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useLoginMutation } from '../../services/LeadsApi';
 
 function Login() {
+  var [loginFn]=useLoginMutation();
+  var navigate=useNavigate();
   return (
     <div class="wrapper">
       <div class='form-box login'>
         <h2>Login</h2>
       <Formik
-       initialValues={{ name: '', password: '' }}
+       initialValues={{ username: '', password: '' }}
        onSubmit={(values)=>{
          console.log(values)
+         loginFn(values).then((res)=>{
+          window.localStorage.setItem('token',res?.data?.token)
+          console.log(res)
+          navigate('/')
+         })
        }}
      >
        {(isSubmitting) => (
          <Form>
           <div class='input-box'>
           <span class='icon'><ion-icon name="person-circle-outline"></ion-icon></span>
-           <Field type="text" name="name" />
+           <Field type="text" name="username" />
            <label>Name</label>
-           <ErrorMessage name="name" component="div" />
+           <ErrorMessage name="username" component="div" />
           </div>
           <div class='input-box'>
           <span class='icon'><ion-icon name="lock-closed-outline"></ion-icon></span>
