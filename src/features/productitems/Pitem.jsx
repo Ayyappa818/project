@@ -8,7 +8,7 @@ function Pitem() {
     console.log(isLoading)
     console.log(data)
   return (
-    <div>
+    <div class="container">
       <h1>Pitem</h1>
       {
         isLoading && <h3>isloading....</h3>

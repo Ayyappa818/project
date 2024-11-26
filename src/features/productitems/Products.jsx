@@ -1,12 +1,21 @@
 import React from 'react'
-import { useGetproductsQuery } from '../../services/ProductsApi'
+import { useDelproductsMutation, useGetproductsQuery, useLazyGetproductsQuery } from '../../services/ProductsApi'
+import { useParams } from 'react-router-dom';
 
 function Products() {
+  var {id}=useParams();
+  var[getprodFn]=useLazyGetproductsQuery();
+  var[delFn]=useDelproductsMutation(id);
   var{isLoading,data}=useGetproductsQuery();
+
   console.log(isLoading)
   console.log(data)
+  function delProduct(id){
+    delFn(id);
+    getprodFn();
+  }
   return (
-    <div>
+    <div class="container">
       {
         isLoading && <h1>isLoading....</h1>
       }
@@ -20,7 +29,7 @@ function Products() {
                 <h5 class="card-title">Title :<a href={`/product/pitem/${pd.id}`}>{pd.title}</a> </h5>
                 <h4 class="card-text">Price :{pd.price}</h4>
                 <h5 class="card-text">Category :{pd.category}</h5>
-                <p>Rating :{pd.rating.rate}</p>
+                <button class="btn btn-danger" onClick={()=>{delProduct(pd.id)}}>Del</button>
               </div>
             </div>
           </div>

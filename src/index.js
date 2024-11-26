@@ -13,6 +13,7 @@ import {
 } from "react-router-dom";
 import Products from './features/productitems/Products';
 import Pitem from './features/productitems/Pitem';
+import AddProduct from './features/productitems/AddProduct';
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
       {
         path:"/product/pitem/:id",
         element:<Pitem></Pitem>
+      },
+      {
+        path:"/product/addproduct",
+        element:<AddProduct></AddProduct>
       }
     ]
   },
