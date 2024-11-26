@@ -10,8 +10,8 @@ function Products() {
 
   console.log(isLoading)
   console.log(data)
-  function delProduct(id){
-    delFn(id);
+  function delProduct(i){
+    delFn(i);
     getprodFn();
   }
   return (
@@ -29,7 +29,7 @@ function Products() {
                 <h5 class="card-title">Title :<a href={`/product/pitem/${pd.id}`}>{pd.title}</a> </h5>
                 <h4 class="card-text">Price :{pd.price}</h4>
                 <h5 class="card-text">Category :{pd.category}</h5>
-                <button class="btn btn-danger" onClick={()=>{delProduct(pd.id)}}>Del</button>
+                <button class="btn btn-danger" onClick={()=>{delProduct(i)}}>Del</button>
               </div>
             </div>
           </div>
