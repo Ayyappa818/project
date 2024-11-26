@@ -1,10 +1,12 @@
-import logo from './logo.svg';
+import { Outlet } from 'react-router-dom';
 import './App.css';
+import Nav from './Nav';
 
 function App() {
   return (
-    <div className="">
-      <h1>Ayyappa</h1>
+    <div className="container">
+      <Nav></Nav>
+      <Outlet></Outlet>
     </div>
   );
 }
