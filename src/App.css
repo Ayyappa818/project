@@ -36,3 +36,18 @@
     transform: rotate(360deg);
   }
 }
+.f{
+  /* background: transparent;
+  border: none;
+  outline: none; */
+}
+.pro{
+  background-image: url("https://png.pngtree.com/thumb_back/fh260/background/20230702/pngtree-d-render-of-abstract-platform-with-rock-base-and-palm-leaves-image_3733546.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.addpro{
+  border : 2px solid rgba(255, 255, 255, 0.267);
+  backdrop-filter: blur(10px);
+}
