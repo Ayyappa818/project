@@ -9,15 +9,20 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-
+import EmployeeHome from './features/Employee/EmployeeHome';
+import EmployeeDetails from './features/Employee/EmployeeDetails';
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App></App>,
     children:[
       {
-        path:"/",
-        element:<></>,
+        path:"/emp",
+        element:<EmployeeHome></EmployeeHome>
+      },
+      {
+        path:"/emp/empdet",
+        element:<EmployeeDetails></EmployeeDetails>
       }
     ]
   },
