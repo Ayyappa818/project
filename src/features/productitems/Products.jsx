@@ -19,12 +19,12 @@ function Products() {
       {
         isLoading && <h1>isLoading....</h1>
       }
-      <div class="row row-cols-1 row-cols-md-3 g-4">
+      <div class="row row-cols-1 row-cols-md-3 g-4 text-center">
         {
           !isLoading && data?.map((pd,i)=>{
             return <div class="col">
             <div class="card h-100">
-              <img src={pd.image} class="card-img-top w-50"/>
+              <img src={pd.image} class="card-img-top mx-auto p-2 w-50"/>
               <div class="card-body">
                 <h5 class="card-title">Title :<a href={`/product/pitem/${pd.id}`}>{pd.title}</a> </h5>
                 <h4 class="card-text">Price :{pd.price}</h4>

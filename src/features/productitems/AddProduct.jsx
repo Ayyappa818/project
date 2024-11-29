@@ -34,7 +34,7 @@ function AddProduct() {
           <Field type="text" name="id" class="form-control f" id="id" placeholder="name@example.com"></Field>
           <label for="id">id</label>
         </div>
-        <div class="form-floating mb-3 p-2 m-2">
+        <div class="form-floati ng mb-3 p-2 m-2">
           <Field type="text" name="title" class="form-control f" id="title" placeholder="name@example.com"></Field>
           <label for="title">Title</label>
         </div>
