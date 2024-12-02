@@ -11,12 +11,17 @@ import { store } from './app/store'
 import { Provider } from 'react-redux'
 import Login from './features/User/Login';
 import Signup from './features/User/Signup';
+import Home from './Home';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App></App>,
     children:[
+      {
+        path:'/',
+        element:<Home></Home>
+      },
       {
         path:'/login',
         element:<Login></Login>

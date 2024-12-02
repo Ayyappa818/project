@@ -20,14 +20,14 @@ function Signup() {
        }}
      >
        <Form>
-         <label htmlFor="username">Userame</label>
+         <label htmlFor="username">Username</label>
          <Field name="username" type="text" />
          <ErrorMessage name="username" />
- 
+          <br />
          <label htmlFor="password">Password</label>
          <Field name="password" type="text" />
          <ErrorMessage name="password" />
- 
+          <br />
          <button type="submit">Signup</button>
        </Form>
      </Formik>
