@@ -7,7 +7,9 @@ export const EmployeeApi = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:4500/' }),
   endpoints: (builder) => ({
     getEmployee: builder.query({
-      query: () => `/`,
+      query: () =>{
+        // url:`/employees`
+      },
     }),
     getEmployeedetails: builder.query({
         query: () => `/`,
