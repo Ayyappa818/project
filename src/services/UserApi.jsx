@@ -6,9 +6,20 @@ export const UserApi = createApi({
   reducerPath: 'UserApi',
   baseQuery: fetchBaseQuery({ baseUrl: '' }),
   endpoints: (builder) => ({
-    getuser: builder.query({
-      query: () => ({
-        url:`/`,
+
+    signup: builder.mutation({
+      query: (id) => ({
+        url:`/signup`,
+        method:'POST',
+        body:id,
+      }),
+    }),
+
+    login: builder.mutation({
+      query: (id) => ({
+        url:`/login`,
+        method:'POST',
+        body:id,
       }),
     }),
   }),
@@ -16,4 +27,7 @@ export const UserApi = createApi({
 
 // Export hooks for usage in functional components, which are
 // auto-generated based on the defined endpoints
-export const { useGetuserQuery } = UserApi
+export const { 
+  useSignupMutation,
+  useLoginMutation,
+ } = UserApi
